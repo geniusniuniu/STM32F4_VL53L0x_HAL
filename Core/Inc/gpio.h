@@ -36,11 +36,11 @@ extern "C" {
 
 /* USER CODE END Private defines */
 
-#define LED0 PBout(6)   //LED0
-#define LED1 PBout(7)   //LED1
+#define LED0 PAout(6)   //LED0
+#define LED1 PAout(7)   //LED1
 
 void MX_GPIO_Init(void);
-
+void LED_Init(void);
 /* USER CODE BEGIN Prototypes */
 
 /* USER CODE END Prototypes */

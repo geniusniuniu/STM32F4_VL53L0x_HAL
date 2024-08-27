@@ -1,22 +1,3 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
 #include "usart.h"
@@ -54,12 +35,16 @@ int main(void)
 {
 
 	HAL_Init();
-
-	SystemClock_Config();
-
-	MX_GPIO_Init();
-	MX_I2C1_Init();
 	MX_USART1_UART_Init();
+	SystemClock_Config();
+	
+	MX_GPIO_Init();
+	LED_Init();
+	printf("VL53L0X\n\r");
+//	MX_I2C1_Init();
+	VL53L0X_i2c_init();//初始化IIC总线
+
+	
 
 /******************这是TOF初始化的必要代码，不可删除************************************/
 	while(vl53l0x_init(&vl53l0x_dev))//vl53l0x初始化
@@ -71,11 +56,11 @@ int main(void)
 	printf("VL53L0X OK\r\n");
 
 	//修改TOF读取模式，现在是默认模式，可以在宏定义中找到别的模式
-	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev,Default_Mode)) 
+	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev,HIGH_SPEED)) 
 		printf("VL53L0X MODE SET OK\r\n");
 /******************上述TOF初始化的必要代码，不可删除************************************/
 
-	vl53l0x_test();//vl53l0x测试
+	vl53l0x_test();//vl53l0x测试（死循环）
 
 
 }
@@ -96,19 +81,25 @@ void vl53l0x_test(void)
 			printf("%d\r\n",Distance_data);
 		}
 		
-		delay_ms(30);
+		delay_ms(10);
 		
 		i++;
-		if(i==20)	//0.6s闪一次灯
-		{
-			 i = 0;
-			 LED1=!LED1;
+		if(i==20)	//闪灯
+		{			 
+			LED1 =! LED1;
+			i = 0;
 		} 
 	 }
 }
 
 
-
+//printf重定向
+int fputc(int ch, FILE *f) 
+{
+	uint8_t temp[1] = {ch};
+	HAL_UART_Transmit(&huart1, temp, 1, 2);//
+	return ch;
+}
 
 
 

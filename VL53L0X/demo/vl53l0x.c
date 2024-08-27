@@ -154,7 +154,7 @@ VL53L0X_Error vl53l0x_init(VL53L0X_Dev_t *dev)
 	pMyDevice->comms_type = 1;           	//I2C通信模式
 	pMyDevice->comms_speed_khz = 400;    	//I2C通信速率
 	
-	VL53L0X_i2c_init();//初始化IIC总线
+//	VL53L0X_i2c_init();//初始化IIC总线
 	
 	VL53L0X_Xshut=0;//失能VL53L0X
 	delay_ms(30);

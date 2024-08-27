@@ -37,7 +37,7 @@
 "vl53l0x_test\vl53l0x_gen.o"
 "vl53l0x_test\delay.o"
 "vl53l0x_test\sys.o"
---strict --scatter "VL53L0X_Test\VL53L0X_Test.sct"
+--library_type=microlib --strict --scatter "VL53L0X_Test\VL53L0X_Test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "VL53L0X_Test.map" -o VL53L0X_Test\VL53L0X_Test.axf

@@ -14,7 +14,7 @@
 #define VL53L0X_Addr 0x52
 
 //控制Xshut电平,从而使能VL53L0X工作 1:使能 0:关闭
-#define VL53L0X_Xshut PCout(0)		
+#define VL53L0X_Xshut PAout(4)		
 
 //使能2.8V IO电平模式
 #define USE_I2C_2V8  1
