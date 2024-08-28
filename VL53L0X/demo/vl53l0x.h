@@ -9,12 +9,14 @@
 #include "sys.h"
 #include "delay.h"
 
-
 //VL53L0X传感器上电默认IIC地址为0X52(不包含最低位)
 #define VL53L0X_Addr 0x52
 
 //控制Xshut电平,从而使能VL53L0X工作 1:使能 0:关闭
-#define VL53L0X_Xshut PAout(4)		
+#define Xaxis_VL53L0X_Xshut 3
+#define Yaxis_VL53L0X_Xshut 4
+#define Zaxis_VL53L0X_Xshut 5
+
 
 //使能2.8V IO电平模式
 #define USE_I2C_2V8  1
@@ -26,7 +28,9 @@
 #define HIGH_SPEED     3//高速
 
 
-extern VL53L0X_Dev_t vl53l0x_dev;//设备I2C数据参数
+extern VL53L0X_Dev_t Xaxis_vl53l0x_dev;//X轴设备I2C数据参数
+extern VL53L0X_Dev_t Yaxis_vl53l0x_dev;//Y轴设备I2C数据参数
+extern VL53L0X_Dev_t Zaxis_vl53l0x_dev;//Z轴设备I2C数据参数
 
 
 //vl53l0x模式配置参数集
@@ -44,13 +48,15 @@ typedef __packed struct
 extern mode_data Mode_data[];
 extern uint8_t AjustOK;
 
-VL53L0X_Error vl53l0x_init(VL53L0X_Dev_t *dev);//初始化vl53l0x
+void XShut_PinInit(void);
+VL53L0X_Error vl53l0x_init(VL53L0X_Dev_t *dev,char Xshut_Pin);//初始化vl53l0x
 void print_pal_error(VL53L0X_Error Status);//错误信息打印
-void mode_string(u8 mode,char *buf);//模式字符串显示
-void vl53l0x_reset(VL53L0X_Dev_t *dev);//vl53l0x复位
+void vl53l0x_reset(VL53L0X_Dev_t *dev,char Xshut_Pin);//vl53l0x复位
 
 void vl53l0x_info(void);//获取vl53l0x设备ID信息
 void One_measurement(void);//获取一次测量距离数据
+VL53L0X_Error vl53l0x_Addr_set(VL53L0X_Dev_t *dev,uint8_t newaddr);
+
 #endif
 
 

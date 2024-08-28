@@ -28,55 +28,55 @@ VL53L0X_Error vl53l0x_set_mode(VL53L0X_Dev_t *dev,u8 mode)
 	 uint32_t refSpadCount;
 	 uint8_t isApertureSpads;
 	
-	 vl53l0x_reset(dev);//复位vl53l0x(频繁切换工作模式容易导致采集距离数据不准，需加上这一代码)
+	 //vl53l0x_reset(dev);//复位vl53l0x(频繁切换工作模式容易导致采集距离数据不准，需加上这一代码)
 	 status = VL53L0X_StaticInit(dev);
 
      if(AjustOK!=0)//已校准好了,写入校准值
      {
 	    status= VL53L0X_SetReferenceSpads(dev,Vl53l0x_data.refSpadCount,Vl53l0x_data.isApertureSpads);//设定Spads校准值
         if(status!=VL53L0X_ERROR_NONE) goto error;	
-        delay_ms(2);		 
+        HAL_Delay(2);		 
 	    status= VL53L0X_SetRefCalibration(dev,Vl53l0x_data.VhvSettings,Vl53l0x_data.PhaseCal);//设定Ref校准值
 		if(status!=VL53L0X_ERROR_NONE) goto error;
-		 delay_ms(2);
+		 HAL_Delay(2);
 	    status=VL53L0X_SetOffsetCalibrationDataMicroMeter(dev,Vl53l0x_data.OffsetMicroMeter);//设定偏移校准值
 		if(status!=VL53L0X_ERROR_NONE) goto error; 
-		 delay_ms(2);
+		 HAL_Delay(2);
 		status=VL53L0X_SetXTalkCompensationRateMegaCps(dev,Vl53l0x_data.XTalkCompensationRateMegaCps);//设定串扰校准值
 		if(status!=VL53L0X_ERROR_NONE) goto error;
-         delay_ms(2);		 
+         HAL_Delay(2);		 
 		 
      }
 	 else
 	 {
 		status = VL53L0X_PerformRefCalibration(dev, &VhvSettings, &PhaseCal);//Ref参考校准
 		if(status!=VL53L0X_ERROR_NONE) goto error;
-		delay_ms(2);
+		HAL_Delay(2);
 		status = VL53L0X_PerformRefSpadManagement(dev, &refSpadCount, &isApertureSpads);//执行参考SPAD管理
 		if(status!=VL53L0X_ERROR_NONE) goto error;
-        delay_ms(2);		 	 
+        HAL_Delay(2);		 	 
 	 }
 	 status = VL53L0X_SetDeviceMode(dev,VL53L0X_DEVICEMODE_SINGLE_RANGING);//使能单次测量模式
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetLimitCheckEnable(dev,VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE,1);//使能SIGMA范围检查
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetLimitCheckEnable(dev,VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE,1);//使能信号速率范围检查
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetLimitCheckValue(dev,VL53L0X_CHECKENABLE_SIGMA_FINAL_RANGE,Mode_data[mode].sigmaLimit);//设定SIGMA范围
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetLimitCheckValue(dev,VL53L0X_CHECKENABLE_SIGNAL_RATE_FINAL_RANGE,Mode_data[mode].signalLimit);//设定信号速率范围范围
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetMeasurementTimingBudgetMicroSeconds(dev,Mode_data[mode].timingBudget);//设定完整测距最长时间
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetVcselPulsePeriod(dev, VL53L0X_VCSEL_PERIOD_PRE_RANGE, Mode_data[mode].preRangeVcselPeriod);//设定VCSEL脉冲周期
 	 if(status!=VL53L0X_ERROR_NONE) goto error;
-	 delay_ms(2);
+	 HAL_Delay(2);
 	 status = VL53L0X_SetVcselPulsePeriod(dev, VL53L0X_VCSEL_PERIOD_FINAL_RANGE, Mode_data[mode].finalRangeVcselPeriod);//设定VCSEL脉冲周期范围
 	 
 	 error://错误信息

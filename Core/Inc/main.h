@@ -30,6 +30,12 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 #include "sys.h"
 #include "delay.h"	
+
+#define delay_ms	HAL_Delay
+
+#define TOF_X_ADDR	0x5A
+#define TOF_Y_ADDR	0x5B
+#define TOF_Z_ADDR	0x5C
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 

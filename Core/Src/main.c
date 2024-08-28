@@ -3,12 +3,13 @@
 #include "usart.h"
 #include "gpio.h"
 #include "vl53l0x.h"
+#include "vl53l0x_platform.h"
 
 #define FILTER_N	16
 
 void SystemClock_Config(void);
 void vl53l0x_test(void);
-
+uint8_t sta = 6;
 
 uint16_t Filter_Window(uint16_t Dis) 
 {
@@ -40,26 +41,69 @@ int main(void)
 	
 	MX_GPIO_Init();
 	LED_Init();
-	printf("VL53L0X\n\r");
-//	MX_I2C1_Init();
+	XShut_PinInit();
 	VL53L0X_i2c_init();//初始化IIC总线
-
 	
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET  );	//使用片选信号启动第一个tof
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);	
+    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);		
+	HAL_Delay(200);	//等待，确保tof启动
 
-/******************这是TOF初始化的必要代码，不可删除************************************/
-	while(vl53l0x_init(&vl53l0x_dev))//vl53l0x初始化
+	//使用默认地址初始化第一个tof
+	while(vl53l0x_init(&Xaxis_vl53l0x_dev,Xaxis_VL53L0X_Xshut))//vl53l0x初始化
 	{
-		printf("VL53L0X Error!!!\n\r");
-		delay_ms(100);
+		printf("Xaxis_VL53L0x Error!!!\n\r");
+		HAL_Delay(100);
 		LED0=!LED0;//DS0闪烁
 	}
-	printf("VL53L0X OK\r\n");
+	printf("Xaxis_VL53L0XInit OK\r\n");
+	
+	//修改第一个tof的iic操作地址
+	sta = vl53l0x_Addr_set(&Xaxis_vl53l0x_dev,TOF_X_ADDR);
+	printf("Addr:%#x\r\n",Xaxis_vl53l0x_dev.I2cDevAddr);
 
+	
+	//启动第二个TOF
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET);
+	HAL_Delay(200);	//等待，确保tof启动
+	
+	//使用默认地址初始化第二个tof
+	while(vl53l0x_init(&Yaxis_vl53l0x_dev,Yaxis_VL53L0X_Xshut))//vl53l0x初始化
+	{
+		printf("Yaxis_VL53L0x Error!!!\n\r");
+		HAL_Delay(100);
+		LED0=!LED0;//DS0闪烁
+	}
+	printf("Yaxis_VL53L0XInit OK\r\n");
+	
+	//修改第二个tof的iic操作地址
+	vl53l0x_Addr_set(&Yaxis_vl53l0x_dev,TOF_Y_ADDR);
+	printf("Addr:%#x\r\n",Yaxis_vl53l0x_dev.I2cDevAddr);
+//	
+//	
+
+	//启动第三个TOF
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
+	HAL_Delay(200);	//等待，确保tof启动	
+	
+	//使用默认地址初始化第三个tof
+	while(vl53l0x_init(&Zaxis_vl53l0x_dev,Zaxis_VL53L0X_Xshut))//vl53l0x初始化
+	{
+		printf("Zaxis_VL53L0x Error!!!\n\r");
+		HAL_Delay(100);
+		LED0=!LED0;//DS0闪烁
+	}
+	printf("Zaxis_VL53L0XInit OK\r\n");
+	
+	//修改第三个tof的iic操作地址
+	//vl53l0x_Addr_set(&Zaxis_vl53l0x_dev,TOF_Z_ADDR);
+	Zaxis_vl53l0x_dev.I2cDevAddr = TOF_Z_ADDR;
+	printf("Addr:%#x\r\n",Zaxis_vl53l0x_dev.I2cDevAddr);
+	
 	//修改TOF读取模式，现在是默认模式，可以在宏定义中找到别的模式
-	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev,HIGH_SPEED)) 
-		printf("VL53L0X MODE SET OK\r\n");
-/******************上述TOF初始化的必要代码，不可删除************************************/
-
+	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&Xaxis_vl53l0x_dev,Default_Mode)) 
+		printf("Xaxis_VL53L0X MODE SET OK\r\n");
+	
 	vl53l0x_test();//vl53l0x测试（死循环）
 
 
@@ -73,13 +117,15 @@ void vl53l0x_test(void)
 	 VL53L0X_Error status = 0; 
 	 while(1)
 	 {
-		status = vl53l0x_start_single_test(&vl53l0x_dev,&vl53l0x_data,buf);
+		status = vl53l0x_start_single_test(&Xaxis_vl53l0x_dev,&vl53l0x_data,buf);
 		Filter_Window(Distance_data); 
 		 
 		if(status == VL53L0X_ERROR_NONE)
 		{
 			printf("%d\r\n",Distance_data);
 		}
+		else
+			printf("%d\r\n",status);
 		
 		delay_ms(10);
 		
