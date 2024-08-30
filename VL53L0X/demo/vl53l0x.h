@@ -13,9 +13,9 @@
 #define VL53L0X_Addr 0x52
 
 //控制Xshut电平,从而使能VL53L0X工作 1:使能 0:关闭
-#define Xaxis_VL53L0X_Xshut 3
-#define Yaxis_VL53L0X_Xshut 4
-#define Zaxis_VL53L0X_Xshut 5
+#define Xshut_Pin_X 3
+#define Xshut_Pin_Y 4
+#define Xshut_Pin_Z 5
 
 
 //使能2.8V IO电平模式
@@ -28,9 +28,15 @@
 #define HIGH_SPEED     3//高速
 
 
-extern VL53L0X_Dev_t Xaxis_vl53l0x_dev;//X轴设备I2C数据参数
-extern VL53L0X_Dev_t Yaxis_vl53l0x_dev;//Y轴设备I2C数据参数
-extern VL53L0X_Dev_t Zaxis_vl53l0x_dev;//Z轴设备I2C数据参数
+typedef enum 
+{  
+	Axis_X= 0,  
+	Axis_Y,  
+	Axis_Z  
+}_3_Axis; 
+
+extern VL53L0X_Dev_t vl53l0x_dev[3];//设备I2C数据参数
+
 
 
 //vl53l0x模式配置参数集

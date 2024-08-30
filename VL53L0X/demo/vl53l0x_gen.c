@@ -1,20 +1,8 @@
 #include "vl53l0x_gen.h"
 #include "GPIO.h"
-//////////////////////////////////////////////////////////////////////////////////	 
-//本程序只供学习使用，未经作者许可，不得用于其它任何用途
-//ALIENTEK 阿波罗STM32F429开发板
-//VL53L0X-普通测量模式 驱动代码	   
-//正点原子@ALIENTEK
-//技术论坛:www.openedv.com
-//创建日期:2017/7/1
-//版本：V1.0
-//版权所有，盗版必究。
-//Copyright(C) 广州市星翼电子科技有限公司 2009-2019
-//All rights reserved									  
-//////////////////////////////////////////////////////////////////////////////////  
 
 VL53L0X_RangingMeasurementData_t vl53l0x_data;//测距测量结构体
-vu16 Distance_data=0;//保存测距数据
+uint16_t Distance_data[3] = {0};//保存测距数据
 
 //VL53L0X 测量模式配置
 //dev:设备I2C参数结构体
@@ -93,10 +81,7 @@ VL53L0X_Error vl53l0x_set_mode(VL53L0X_Dev_t *dev,u8 mode)
 //VL53L0X 单次距离测量函数
 //dev:设备I2C参数结构体
 //pdata:保存测量数据结构体
-//VL53L0X 单次距离测量函数
-//dev:设备I2C参数结构体
-//pdata:保存测量数据结构体
-VL53L0X_Error vl53l0x_start_single_test(VL53L0X_Dev_t *dev,VL53L0X_RangingMeasurementData_t *pdata,char *buf)
+VL53L0X_Error vl53l0x_start_single_test(VL53L0X_Dev_t *dev,uint8_t index,VL53L0X_RangingMeasurementData_t *pdata,char *buf)
 {
 	VL53L0X_Error status = VL53L0X_ERROR_NONE;
 	uint8_t RangeStatus;
@@ -109,7 +94,7 @@ VL53L0X_Error vl53l0x_start_single_test(VL53L0X_Dev_t *dev,VL53L0X_RangingMeasur
     memset(buf,0x00,VL53L0X_MAX_STRING_LENGTH);
 	VL53L0X_GetRangeStatusString(RangeStatus,buf);//根据测量状态读取状态字符串
 	
-	Distance_data = pdata->RangeMilliMeter;//保存最近一次测距测量数据
+	Distance_data[index] = pdata->RangeMilliMeter;//保存最近一次测距测量数据
 	
     return status;
 }

@@ -5,27 +5,33 @@
 #include "vl53l0x.h"
 #include "vl53l0x_platform.h"
 
-#define FILTER_N	16
+
+#define FILTER_N	20
 
 void SystemClock_Config(void);
 void vl53l0x_test(void);
 uint8_t sta = 6;
 
-uint16_t Filter_Window(uint16_t Dis) 
+uint16_t* Filter_Window(uint16_t* Dis) 
 {
-    static uint16_t filter_buf[FILTER_N + 1];
-    int i;    
-    uint16_t filter_sum = 0;
-    filter_buf[FILTER_N] = Dis;
-    for(i = 0; i < FILTER_N; i++) 
-    {
-        filter_buf[i] = filter_buf[i + 1]; // 所有数据左移，低位仍掉
-        filter_sum += filter_buf[i];
-    }
-    return (uint16_t)(filter_sum / FILTER_N);
+    static uint16_t filter_buf[3][FILTER_N + 1] = {0};
+    int i = 0,j = 0;    
+    uint16_t filter_sum[3] = {0};
+    filter_buf[0][FILTER_N] = Dis[0];
+	filter_buf[1][FILTER_N] = Dis[1];
+	filter_buf[2][FILTER_N] = Dis[2];
+	
+    for(j = 0; j < 3;j++)
+	{
+		for(i = 0; i < FILTER_N; i++) 
+		{
+			filter_buf[j][i] = filter_buf[j][i + 1]; 	//所有数据左移，低位仍掉
+			filter_sum[j] += filter_buf[j][i];
+		}
+		Dis[j] = (uint16_t)(filter_sum[j] / FILTER_N);
+	}
+    return Dis;
 }
-
-static char buf[VL53L0X_MAX_STRING_LENGTH];//测试模式字符串字符缓冲区
 
 
 /**
@@ -38,74 +44,72 @@ int main(void)
 	HAL_Init();
 	MX_USART1_UART_Init();
 	SystemClock_Config();
+	delay_init(168);
 	
 	MX_GPIO_Init();
 	LED_Init();
 	XShut_PinInit();
 	VL53L0X_i2c_init();//初始化IIC总线
 	
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET  );	//使用片选信号启动第一个tof
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);	
-    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);		
-	HAL_Delay(200);	//等待，确保tof启动
 
-	//使用默认地址初始化第一个tof
-	while(vl53l0x_init(&Xaxis_vl53l0x_dev,Xaxis_VL53L0X_Xshut))//vl53l0x初始化
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);	
+    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);		
+
+
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET  );	//使用片选信号启动第一个tof
+	HAL_Delay(100);	//等待，确保tof启动
+	while(vl53l0x_init(&vl53l0x_dev[0],Xshut_Pin_X))	//使用默认地址初始化第一个tof
 	{
 		printf("Xaxis_VL53L0x Error!!!\n\r");
 		HAL_Delay(100);
 		LED0=!LED0;//DS0闪烁
 	}
-	printf("Xaxis_VL53L0XInit OK\r\n");
+	printf("Xaxis_VL53L0X Init OK\r\n");	
+	vl53l0x_Addr_set(&vl53l0x_dev[Axis_X],TOF_X_ADDR);
+	printf("Addr:%#x\r\n",vl53l0x_dev[Axis_X].I2cDevAddr);
 	
-	//修改第一个tof的iic操作地址
-	sta = vl53l0x_Addr_set(&Xaxis_vl53l0x_dev,TOF_X_ADDR);
-	printf("Addr:%#x\r\n",Xaxis_vl53l0x_dev.I2cDevAddr);
-
 	
 	//启动第二个TOF
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET);
-	HAL_Delay(200);	//等待，确保tof启动
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
+	HAL_Delay(100);	//等待，确保tof启动
 	
 	//使用默认地址初始化第二个tof
-	while(vl53l0x_init(&Yaxis_vl53l0x_dev,Yaxis_VL53L0X_Xshut))//vl53l0x初始化
+	while(vl53l0x_init(&vl53l0x_dev[Axis_Y],Xshut_Pin_Y))//vl53l0x初始化
 	{
 		printf("Yaxis_VL53L0x Error!!!\n\r");
 		HAL_Delay(100);
 		LED0=!LED0;//DS0闪烁
 	}
-	printf("Yaxis_VL53L0XInit OK\r\n");
+	printf("Yaxis_VL53L0X Init OK\r\n");	
+	vl53l0x_Addr_set(&vl53l0x_dev[Axis_Y],TOF_Y_ADDR);
+	printf("Addr:%#x\r\n",vl53l0x_dev[Axis_Y].I2cDevAddr);
 	
-	//修改第二个tof的iic操作地址
-	vl53l0x_Addr_set(&Yaxis_vl53l0x_dev,TOF_Y_ADDR);
-	printf("Addr:%#x\r\n",Yaxis_vl53l0x_dev.I2cDevAddr);
-//	
-//	
 
-	//启动第三个TOF
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
-	HAL_Delay(200);	//等待，确保tof启动	
-	
-	//使用默认地址初始化第三个tof
-	while(vl53l0x_init(&Zaxis_vl53l0x_dev,Zaxis_VL53L0X_Xshut))//vl53l0x初始化
-	{
-		printf("Zaxis_VL53L0x Error!!!\n\r");
-		HAL_Delay(100);
-		LED0=!LED0;//DS0闪烁
-	}
-	printf("Zaxis_VL53L0XInit OK\r\n");
-	
-	//修改第三个tof的iic操作地址
-	//vl53l0x_Addr_set(&Zaxis_vl53l0x_dev,TOF_Z_ADDR);
-	Zaxis_vl53l0x_dev.I2cDevAddr = TOF_Z_ADDR;
-	printf("Addr:%#x\r\n",Zaxis_vl53l0x_dev.I2cDevAddr);
+//	//启动第三个TOF
+//	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+//	HAL_Delay(200);	//等待，确保tof启动	
+//	
+//	//使用默认地址初始化第三个tof
+//	while(vl53l0x_init(&Zaxis_vl53l0x_dev,Zaxis_VL53L0X_Xshut))//vl53l0x初始化
+//	{
+//		printf("Zaxis_VL53L0x Error!!!\n\r");
+//		HAL_Delay(100);
+//		LED0=!LED0;//DS0闪烁
+//	}
+//	printf("Zaxis_VL53L0X Init OK\r\n");
+//	
+//	//修改第三个tof的iic操作地址
+//	//vl53l0x_Addr_set(&Zaxis_vl53l0x_dev,TOF_Z_ADDR);
+//	Zaxis_vl53l0x_dev.I2cDevAddr = TOF_Z_ADDR;
+//	printf("Addr:%#x\r\n",Zaxis_vl53l0x_dev.I2cDevAddr);
 	
 	//修改TOF读取模式，现在是默认模式，可以在宏定义中找到别的模式
-	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&Xaxis_vl53l0x_dev,Default_Mode)) 
+	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev[Axis_X],Default_Mode)) 
 		printf("Xaxis_VL53L0X MODE SET OK\r\n");
 	
-	vl53l0x_test();//vl53l0x测试（死循环）
-
+	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev[Axis_Y],Default_Mode)) 
+		printf("Yaxis_VL53L0X MODE SET OK\r\n");
+//	vl53l0x_test();//vl53l0x测试（死循环）
 
 }
 
@@ -115,22 +119,25 @@ void vl53l0x_test(void)
 {   
 	 u8 i=0;
 	 VL53L0X_Error status = 0; 
+	 static char buf[VL53L0X_MAX_STRING_LENGTH];//测试模式字符串字符缓冲区
+	 uint16_t* result = NULL;
 	 while(1)
-	 {
-		status = vl53l0x_start_single_test(&Xaxis_vl53l0x_dev,&vl53l0x_data,buf);
-		Filter_Window(Distance_data); 
+	 {		  	 
+		status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_X],Axis_X,&vl53l0x_data,buf);
+		status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_Y],Axis_Y,&vl53l0x_data,buf);
+		//status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_X],&vl53l0x_data,buf);
+		Distance_data[Axis_Z] = 0;
+		//result = Filter_Window(Distance_data);
 		 
 		if(status == VL53L0X_ERROR_NONE)
 		{
-			printf("%d\r\n",Distance_data);
+			printf("%d,%d\r\n",123,Distance_data[Axis_Y]);
 		}
 		else
-			printf("%d\r\n",status);
-		
-		delay_ms(10);
+			printf("Status:%d\r\n",status);	
 		
 		i++;
-		if(i==20)	//闪灯
+		if(i==5)	//闪灯
 		{			 
 			LED1 =! LED1;
 			i = 0;

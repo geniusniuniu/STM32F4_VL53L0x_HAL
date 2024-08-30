@@ -2075,17 +2075,24 @@ VL53L0X_Error VL53L0X_PerformSingleMeasurement(VL53L0X_DEV Dev)
 	 * single ranging or single histogram */
 	if (Status == VL53L0X_ERROR_NONE
 		&& DeviceMode == VL53L0X_DEVICEMODE_SINGLE_RANGING)
-		Status = VL53L0X_StartMeasurement(Dev);
+		{
+			Status = VL53L0X_StartMeasurement(Dev);
+		}
 
 
 	if (Status == VL53L0X_ERROR_NONE)
+	{
 		Status = VL53L0X_measurement_poll_for_completion(Dev);
+	}
 
 
 	/* Change PAL State in case of single ranging or single histogram */
 	if (Status == VL53L0X_ERROR_NONE
 		&& DeviceMode == VL53L0X_DEVICEMODE_SINGLE_RANGING)
+	{
 		PALDevDataSet(Dev, PalState, VL53L0X_STATE_IDLE);
+	}
+		
 
 
 	LOG_FUNCTION_END(Status);
@@ -2558,16 +2565,23 @@ VL53L0X_Error VL53L0X_PerformSingleRangingMeasurement(VL53L0X_DEV Dev,
 	Status = VL53L0X_SetDeviceMode(Dev, VL53L0X_DEVICEMODE_SINGLE_RANGING);
 
 	if (Status == VL53L0X_ERROR_NONE)
+	{
 		Status = VL53L0X_PerformSingleMeasurement(Dev);
+		
+	}
 
 
 	if (Status == VL53L0X_ERROR_NONE)
+	{
 		Status = VL53L0X_GetRangingMeasurementData(Dev,
-			pRangingMeasurementData);
-
+			pRangingMeasurementData);		
+	}
+		
 
 	if (Status == VL53L0X_ERROR_NONE)
+	{
 		Status = VL53L0X_ClearInterruptMask(Dev, 0);
+	}
 
 
 	LOG_FUNCTION_END(Status);

@@ -17,11 +17,11 @@
 ////////////////////////////////////////////////////////////////////////////////// 
 
 extern VL53L0X_RangingMeasurementData_t vl53l0x_data;
-extern vu16 Distance_data;//保存测距数据
+extern uint16_t Distance_data[3];//保存测距数据
 
 VL53L0X_Error vl53l0x_set_mode(VL53L0X_Dev_t *dev,u8 mode);
 void vl53l0x_general_test(VL53L0X_Dev_t *dev);
-VL53L0X_Error vl53l0x_start_single_test(VL53L0X_Dev_t *dev,VL53L0X_RangingMeasurementData_t *pdata,char *buf);
+VL53L0X_Error vl53l0x_start_single_test(VL53L0X_Dev_t *dev,uint8_t index,VL53L0X_RangingMeasurementData_t *pdata,char *buf);
 
 #endif
 

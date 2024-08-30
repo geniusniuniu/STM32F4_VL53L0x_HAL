@@ -2,9 +2,8 @@
 #include "GPIO.h"
 #include "vl53l0x_gen.h"
 
-VL53L0X_Dev_t Xaxis_vl53l0x_dev;//X轴设备I2C数据参数
-VL53L0X_Dev_t Yaxis_vl53l0x_dev;//Y轴设备I2C数据参数
-VL53L0X_Dev_t Zaxis_vl53l0x_dev;//Z轴设备I2C数据参数
+VL53L0X_Dev_t vl53l0x_dev[3]; //设备I2C数据参数
+
 
 VL53L0X_DeviceInfo_t vl53l0x_dev_info;//设备ID版本信息
 uint8_t AjustOK=0;//校准标志位
@@ -138,7 +137,7 @@ void XShut_PinInit(void)
 	
     HAL_GPIO_Init(GPIOA,&GPIO_Initure);
 	
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);  //初始化，关闭片选
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);  //初始化，Disable
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);	 
     HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);	
 }
@@ -157,7 +156,7 @@ VL53L0X_Error vl53l0x_init(VL53L0X_Dev_t *dev,char Xshut_Pin)
 	PAout(Xshut_Pin)=0;//失能VL53L0X
 	HAL_Delay(10);
 	PAout(Xshut_Pin)=1;//使能VL53L0X,让传感器处于工作
-	HAL_Delay(30);
+	HAL_Delay(10);
 	
     vl53l0x_Addr_set(pMyDevice,0x54);//设置VL53L0X传感器I2C地址
     if(Status!=VL53L0X_ERROR_NONE) goto error;
@@ -230,7 +229,7 @@ VL53L0X_Error vl53l0x_init(VL53L0X_Dev_t *dev,char Xshut_Pin)
 //获取一次测量距离数据
 void One_measurement()
 {
-	VL53L0X_PerformSingleRangingMeasurement(&Xaxis_vl53l0x_dev,&vl53l0x_data);	
+	VL53L0X_PerformSingleRangingMeasurement(&vl53l0x_dev[0],&vl53l0x_data);	
 	printf("%4d\r\n",vl53l0x_data.RangeMilliMeter);
 		
 }
