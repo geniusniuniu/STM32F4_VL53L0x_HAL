@@ -49,16 +49,12 @@ int main(void)
 	MX_GPIO_Init();
 	LED_Init();
 	XShut_PinInit();
-	VL53L0X_i2c_init();//初始化IIC总线
+	VL53L0X_i2c_init();//初始化IIC总线	
 	
-
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_RESET);	
-    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET);		
-
-
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET  );	//使用片选信号启动第一个tof
+	//使用片选信号启动第一个tof
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_SET  );	
 	HAL_Delay(100);	//等待，确保tof启动
-	while(vl53l0x_init(&vl53l0x_dev[0],Xshut_Pin_X))	//使用默认地址初始化第一个tof
+	while(vl53l0x_init(&vl53l0x_dev[Axis_X],Xshut_Pin_X))//使用默认地址初始化第一个tof
 	{
 		printf("Xaxis_VL53L0x Error!!!\n\r");
 		HAL_Delay(100);
@@ -66,8 +62,7 @@ int main(void)
 	}
 	printf("Xaxis_VL53L0X Init OK\r\n");	
 	vl53l0x_Addr_set(&vl53l0x_dev[Axis_X],TOF_X_ADDR);
-	printf("Addr:%#x\r\n",vl53l0x_dev[Axis_X].I2cDevAddr);
-	
+	printf("Addr:%#x\r\n",vl53l0x_dev[Axis_X].I2cDevAddr);	
 	
 	//启动第二个TOF
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET);
@@ -86,22 +81,21 @@ int main(void)
 	
 
 //	//启动第三个TOF
-//	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
-//	HAL_Delay(200);	//等待，确保tof启动	
-//	
-//	//使用默认地址初始化第三个tof
-//	while(vl53l0x_init(&Zaxis_vl53l0x_dev,Zaxis_VL53L0X_Xshut))//vl53l0x初始化
-//	{
-//		printf("Zaxis_VL53L0x Error!!!\n\r");
-//		HAL_Delay(100);
-//		LED0=!LED0;//DS0闪烁
-//	}
-//	printf("Zaxis_VL53L0X Init OK\r\n");
-//	
-//	//修改第三个tof的iic操作地址
-//	//vl53l0x_Addr_set(&Zaxis_vl53l0x_dev,TOF_Z_ADDR);
-//	Zaxis_vl53l0x_dev.I2cDevAddr = TOF_Z_ADDR;
-//	printf("Addr:%#x\r\n",Zaxis_vl53l0x_dev.I2cDevAddr);
+	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET);
+	HAL_Delay(100);	//等待，确保tof启动	
+	
+	//使用默认地址初始化第三个tof
+	while(vl53l0x_init(&vl53l0x_dev[Axis_Z],Xshut_Pin_Z))//vl53l0x初始化
+	{
+		printf("Zaxis_VL53L0x Error!!!\n\r");
+		HAL_Delay(100);
+		LED0=!LED0;//DS0闪烁
+	}
+	printf("Zaxis_VL53L0X Init OK\r\n");
+	
+	//修改第三个tof的iic操作地址
+	vl53l0x_Addr_set(&vl53l0x_dev[Axis_Z],TOF_Z_ADDR);
+	printf("Addr:%#x\r\n",vl53l0x_dev[Axis_Z].I2cDevAddr);
 	
 	//修改TOF读取模式，现在是默认模式，可以在宏定义中找到别的模式
 	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev[Axis_X],Default_Mode)) 
@@ -109,8 +103,10 @@ int main(void)
 	
 	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev[Axis_Y],Default_Mode)) 
 		printf("Yaxis_VL53L0X MODE SET OK\r\n");
-//	vl53l0x_test();//vl53l0x测试（死循环）
-
+	
+	if(VL53L0X_ERROR_NONE == vl53l0x_set_mode(&vl53l0x_dev[Axis_Z],Default_Mode)) 
+		printf("Zaxis_VL53L0X MODE SET OK\r\n");
+	vl53l0x_test();//vl53l0x测试（死循环）
 }
 
 
@@ -125,13 +121,12 @@ void vl53l0x_test(void)
 	 {		  	 
 		status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_X],Axis_X,&vl53l0x_data,buf);
 		status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_Y],Axis_Y,&vl53l0x_data,buf);
-		//status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_X],&vl53l0x_data,buf);
-		Distance_data[Axis_Z] = 0;
+		status = vl53l0x_start_single_test(&vl53l0x_dev[Axis_Z],Axis_Z,&vl53l0x_data,buf);
 		//result = Filter_Window(Distance_data);
 		 
 		if(status == VL53L0X_ERROR_NONE)
 		{
-			printf("%d,%d\r\n",123,Distance_data[Axis_Y]);
+			printf("%d,%d,%d\r\n",Distance_data[Axis_X],Distance_data[Axis_Y],Distance_data[Axis_Z]);
 		}
 		else
 			printf("Status:%d\r\n",status);	

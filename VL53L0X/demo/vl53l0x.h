@@ -28,12 +28,12 @@
 #define HIGH_SPEED     3//高速
 
 
-typedef enum 
+enum 
 {  
 	Axis_X= 0,  
 	Axis_Y,  
 	Axis_Z  
-}_3_Axis; 
+}; 
 
 extern VL53L0X_Dev_t vl53l0x_dev[3];//设备I2C数据参数
 

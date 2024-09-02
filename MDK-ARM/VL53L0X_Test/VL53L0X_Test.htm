@@ -3,9 +3,9 @@
 <title>Static Call Graph - [VL53L0X_Test\VL53L0X_Test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image VL53L0X_Test\VL53L0X_Test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Aug 30 18:08:57 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Sep 02 15:08:03 2024
 <BR><P>
-<H3>Maximum Stack Usage =        680 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        664 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; vl53l0x_set_mode &rArr; VL53L0X_StaticInit &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 <P>
@@ -126,7 +126,7 @@ Global Symbols
 <P><STRONG><a name="[5d]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(.text)
 </UL>
-<P><STRONG><a name="[101]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[105]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[5f]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -136,15 +136,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[102]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[106]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[103]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[107]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[104]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[108]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[105]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[109]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[106]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[10a]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f407xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
@@ -404,49 +404,52 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[107]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[10b]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[8d]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 
-<P><STRONG><a name="[108]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[10c]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[65]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[65]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[109]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[10d]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[10a]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[10e]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[64]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[64]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_start_single_test
 </UL>
 
 <P><STRONG><a name="[77]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
-<P><STRONG><a name="[10b]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[10f]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[66]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[d5]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
+<P><STRONG><a name="[d7]"></a>strcpy</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, strcpy.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_range_status_string
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_error_string
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_device_info
 </UL>
 
@@ -454,13 +457,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[10c]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[110]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[62]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[10d]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[111]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[60]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main_after_scatterload
@@ -468,11 +471,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[10e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[112]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[10f]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
+<P><STRONG><a name="[113]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
 
-<P><STRONG><a name="[110]"></a>__decompress2</STRONG> (Thumb, 94 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
+<P><STRONG><a name="[114]"></a>__decompress2</STRONG> (Thumb, 94 bytes, Stack size unknown bytes, __dclz77c.o(.text), UNUSED)
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.BusFault_Handler))
 <BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BusFault_Handler
@@ -493,8 +496,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -502,13 +505,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_i2c_init
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_i2c_init
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 
 <P><STRONG><a name="[7c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
+<BR><BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -597,8 +600,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[f7]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_CLKSourceConfig))
-<BR><BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
+<P><STRONG><a name="[f9]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_CLKSourceConfig))
+<BR><BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 </UL>
 
 <P><STRONG><a name="[6e]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(i.HAL_SYSTICK_Config))
@@ -652,7 +655,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fa]"></a>MX_GPIO_Init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, gpio.o(i.MX_GPIO_Init))
+<P><STRONG><a name="[fc]"></a>MX_GPIO_Init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, gpio.o(i.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = MX_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -719,7 +722,7 @@ Global Symbols
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterruptThresholds
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
 </UL>
 
 <P><STRONG><a name="[88]"></a>VL53L0X_ClearInterruptMask</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, vl53l0x_api.o(i.VL53L0X_ClearInterruptMask))
@@ -728,9 +731,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
 </UL>
 
 <P><STRONG><a name="[8a]"></a>VL53L0X_DataInit</STRONG> (Thumb, 400 bytes, Stack size 88 bytes, vl53l0x_api.o(i.VL53L0X_DataInit))
@@ -744,7 +747,7 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
 </UL>
 
 <P><STRONG><a name="[90]"></a>VL53L0X_GetDeviceInfo</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetDeviceInfo))
@@ -752,7 +755,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_device_info
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
 </UL>
 
 <P><STRONG><a name="[8c]"></a>VL53L0X_GetDeviceParameters</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_GetDeviceParameters))
@@ -766,7 +769,7 @@ Global Symbols
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetLimitCheckEnable
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterMeasurementPeriodMilliSeconds
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 
@@ -775,7 +778,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
 <P><STRONG><a name="[92]"></a>VL53L0X_GetInterMeasurementPeriodMilliSeconds</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, vl53l0x_api.o(i.VL53L0X_GetInterMeasurementPeriodMilliSeconds))
@@ -804,7 +807,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[96]"></a>VL53L0X_GetLimitCheckEnable</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetLimitCheckEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 </UL>
 
@@ -813,7 +816,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 </UL>
 
@@ -823,7 +826,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterruptMaskStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
 </UL>
 
 <P><STRONG><a name="[98]"></a>VL53L0X_GetMeasurementTimingBudgetMicroSeconds</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetMeasurementTimingBudgetMicroSeconds))
@@ -847,39 +850,47 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_error_string
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
+<BR>[Called By]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
 </UL>
 
-<P><STRONG><a name="[a2]"></a>VL53L0X_GetRangingMeasurementData</STRONG> (Thumb, 300 bytes, Stack size 72 bytes, vl53l0x_api.o(i.VL53L0X_GetRangingMeasurementData))
+<P><STRONG><a name="[a2]"></a>VL53L0X_GetRangeStatusString</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetRangeStatusString))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = VL53L0X_GetRangeStatusString &rArr; VL53L0X_get_range_status_string
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_range_status_string
+</UL>
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_start_single_test
+</UL>
+
+<P><STRONG><a name="[a4]"></a>VL53L0X_GetRangingMeasurementData</STRONG> (Thumb, 300 bytes, Stack size 72 bytes, vl53l0x_api.o(i.VL53L0X_GetRangingMeasurementData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
+<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
 </UL>
 
-<P><STRONG><a name="[a5]"></a>VL53L0X_GetSequenceStepEnables</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_GetSequenceStepEnables))
+<P><STRONG><a name="[a7]"></a>VL53L0X_GetSequenceStepEnables</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_GetSequenceStepEnables))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = VL53L0X_GetSequenceStepEnables &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sequence_step_enabled
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sequence_step_enabled
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_measurement_timing_budget_micro_seconds
 </UL>
 
-<P><STRONG><a name="[a7]"></a>VL53L0X_GetVcselPulsePeriod</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetVcselPulsePeriod))
+<P><STRONG><a name="[a9]"></a>VL53L0X_GetVcselPulsePeriod</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetVcselPulsePeriod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = VL53L0X_GetVcselPulsePeriod &rArr; VL53L0X_get_vcsel_pulse_period &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
 <P><STRONG><a name="[97]"></a>VL53L0X_GetWrapAroundCheckEnable</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_GetWrapAroundCheckEnable))
@@ -890,8 +901,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 </UL>
 
-<P><STRONG><a name="[d8]"></a>VL53L0X_GetXTalkCompensationEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetXTalkCompensationEnable))
-<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
+<P><STRONG><a name="[da]"></a>VL53L0X_GetXTalkCompensationEnable</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_GetXTalkCompensationEnable))
+<BR><BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
 </UL>
 
 <P><STRONG><a name="[93]"></a>VL53L0X_GetXTalkCompensationRateMegaCps</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_GetXTalkCompensationRateMegaCps))
@@ -902,65 +913,66 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 </UL>
 
-<P><STRONG><a name="[a9]"></a>VL53L0X_PerformRefCalibration</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_PerformRefCalibration))
+<P><STRONG><a name="[ab]"></a>VL53L0X_PerformRefCalibration</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_PerformRefCalibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = VL53L0X_PerformRefCalibration &rArr; VL53L0X_perform_ref_calibration &rArr; VL53L0X_perform_vhv_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
+<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[ab]"></a>VL53L0X_PerformRefSpadManagement</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_PerformRefSpadManagement))
+<P><STRONG><a name="[ad]"></a>VL53L0X_PerformRefSpadManagement</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_PerformRefSpadManagement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = VL53L0X_PerformRefSpadManagement &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[ad]"></a>VL53L0X_PerformSingleMeasurement</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_PerformSingleMeasurement))
+<P><STRONG><a name="[af]"></a>VL53L0X_PerformSingleMeasurement</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_PerformSingleMeasurement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = VL53L0X_PerformSingleMeasurement &rArr; VL53L0X_StartMeasurement &rArr; VL53L0X_CheckAndLoadInterruptSettings &rArr; VL53L0X_GetInterruptThresholds &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
 </UL>
 
-<P><STRONG><a name="[b0]"></a>VL53L0X_PerformSingleRangingMeasurement</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_PerformSingleRangingMeasurement))
+<P><STRONG><a name="[b2]"></a>VL53L0X_PerformSingleRangingMeasurement</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_PerformSingleRangingMeasurement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceMode
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceMode
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ClearInterruptMask
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_start_single_test
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
 </UL>
 
-<P><STRONG><a name="[d7]"></a>VL53L0X_PollingDelay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_PollingDelay))
+<P><STRONG><a name="[d9]"></a>VL53L0X_PollingDelay</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_PollingDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = VL53L0X_PollingDelay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 </UL>
 
 <P><STRONG><a name="[89]"></a>VL53L0X_RdByte</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_RdByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_device_info
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetWrapAroundCheckEnable
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetMeasurementDataReady
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterruptMaskStatus
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetFractionEnable
@@ -971,341 +983,341 @@ Global Symbols
 <P><STRONG><a name="[9b]"></a>VL53L0X_RdDWord</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_RdDWord))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = VL53L0X_RdDWord &rArr; VL53L0X_read_dword &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_dword
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_dword
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterMeasurementPeriodMilliSeconds
 </UL>
 
 <P><STRONG><a name="[9a]"></a>VL53L0X_RdWord</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_RdWord))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_word
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_word
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_offset_calibration_data_micro_meter
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetXTalkCompensationRateMegaCps
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetLimitCheckValue
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterruptThresholds
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetInterMeasurementPeriodMilliSeconds
 </UL>
 
-<P><STRONG><a name="[a3]"></a>VL53L0X_ReadMulti</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_ReadMulti))
+<P><STRONG><a name="[a5]"></a>VL53L0X_ReadMulti</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_ReadMulti))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = VL53L0X_ReadMulti &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_ref_spad_map
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_ref_spad_map
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
 </UL>
 
-<P><STRONG><a name="[b6]"></a>VL53L0X_SetDeviceAddress</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetDeviceAddress))
+<P><STRONG><a name="[b8]"></a>VL53L0X_SetDeviceAddress</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetDeviceAddress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = VL53L0X_SetDeviceAddress &rArr; VL53L0X_WrByte &rArr; VL53L0X_write_byte &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
 </UL>
 
-<P><STRONG><a name="[b1]"></a>VL53L0X_SetDeviceMode</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetDeviceMode))
-<BR><BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<P><STRONG><a name="[b3]"></a>VL53L0X_SetDeviceMode</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetDeviceMode))
+<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
 </UL>
 
-<P><STRONG><a name="[b7]"></a>VL53L0X_SetGpioConfig</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_SetGpioConfig))
+<P><STRONG><a name="[b9]"></a>VL53L0X_SetGpioConfig</STRONG> (Thumb, 312 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_SetGpioConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = VL53L0X_SetGpioConfig &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_UpdateByte
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ClearInterruptMask
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
 <P><STRONG><a name="[8e]"></a>VL53L0X_SetLimitCheckEnable</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, vl53l0x_api.o(i.VL53L0X_SetLimitCheckEnable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = VL53L0X_SetLimitCheckEnable &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_UpdateByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 
 <P><STRONG><a name="[8f]"></a>VL53L0X_SetLimitCheckValue</STRONG> (Thumb, 80 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_SetLimitCheckValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VL53L0X_SetLimitCheckValue &rArr; VL53L0X_WrWord &rArr; VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 
-<P><STRONG><a name="[b9]"></a>VL53L0X_SetMeasurementTimingBudgetMicroSeconds</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetMeasurementTimingBudgetMicroSeconds))
+<P><STRONG><a name="[bb]"></a>VL53L0X_SetMeasurementTimingBudgetMicroSeconds</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetMeasurementTimingBudgetMicroSeconds))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_SetMeasurementTimingBudgetMicroSeconds &rArr; VL53L0X_set_measurement_timing_budget_micro_seconds &rArr; get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
+<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
 </UL>
 
-<P><STRONG><a name="[bb]"></a>VL53L0X_SetOffsetCalibrationDataMicroMeter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetOffsetCalibrationDataMicroMeter))
+<P><STRONG><a name="[bd]"></a>VL53L0X_SetOffsetCalibrationDataMicroMeter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetOffsetCalibrationDataMicroMeter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = VL53L0X_SetOffsetCalibrationDataMicroMeter &rArr; VL53L0X_set_offset_calibration_data_micro_meter &rArr; VL53L0X_WrWord &rArr; VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_offset_calibration_data_micro_meter
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_offset_calibration_data_micro_meter
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[bd]"></a>VL53L0X_SetRefCalibration</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetRefCalibration))
+<P><STRONG><a name="[bf]"></a>VL53L0X_SetRefCalibration</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetRefCalibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_SetRefCalibration &rArr; VL53L0X_set_ref_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_ref_calibration
+<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_ref_calibration
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[bf]"></a>VL53L0X_SetReferenceSpads</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetReferenceSpads))
+<P><STRONG><a name="[c1]"></a>VL53L0X_SetReferenceSpads</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetReferenceSpads))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_SetReferenceSpads &rArr; VL53L0X_set_reference_spads &rArr; enable_ref_spads &rArr; get_ref_spad_map &rArr; VL53L0X_ReadMulti &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[c1]"></a>VL53L0X_SetSequenceStepEnable</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, vl53l0x_api.o(i.VL53L0X_SetSequenceStepEnable))
+<P><STRONG><a name="[c3]"></a>VL53L0X_SetSequenceStepEnable</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, vl53l0x_api.o(i.VL53L0X_SetSequenceStepEnable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = VL53L0X_SetSequenceStepEnable &rArr; VL53L0X_SetMeasurementTimingBudgetMicroSeconds &rArr; VL53L0X_set_measurement_timing_budget_micro_seconds &rArr; get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
-<P><STRONG><a name="[c2]"></a>VL53L0X_SetVcselPulsePeriod</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetVcselPulsePeriod))
+<P><STRONG><a name="[c4]"></a>VL53L0X_SetVcselPulsePeriod</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, vl53l0x_api.o(i.VL53L0X_SetVcselPulsePeriod))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = VL53L0X_SetVcselPulsePeriod &rArr; VL53L0X_set_vcsel_pulse_period &rArr; VL53L0X_perform_phase_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[c4]"></a>VL53L0X_SetXTalkCompensationRateMegaCps</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_SetXTalkCompensationRateMegaCps))
+<P><STRONG><a name="[c6]"></a>VL53L0X_SetXTalkCompensationRateMegaCps</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, vl53l0x_api.o(i.VL53L0X_SetXTalkCompensationRateMegaCps))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VL53L0X_SetXTalkCompensationRateMegaCps &rArr; VL53L0X_WrWord &rArr; VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
-<P><STRONG><a name="[ae]"></a>VL53L0X_StartMeasurement</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, vl53l0x_api.o(i.VL53L0X_StartMeasurement))
+<P><STRONG><a name="[b0]"></a>VL53L0X_StartMeasurement</STRONG> (Thumb, 212 bytes, Stack size 24 bytes, vl53l0x_api.o(i.VL53L0X_StartMeasurement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = VL53L0X_StartMeasurement &rArr; VL53L0X_CheckAndLoadInterruptSettings &rArr; VL53L0X_GetInterruptThresholds &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_CheckAndLoadInterruptSettings
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
 </UL>
 
-<P><STRONG><a name="[c5]"></a>VL53L0X_StaticInit</STRONG> (Thumb, 366 bytes, Stack size 104 bytes, vl53l0x_api.o(i.VL53L0X_StaticInit))
+<P><STRONG><a name="[c7]"></a>VL53L0X_StaticInit</STRONG> (Thumb, 366 bytes, Stack size 104 bytes, vl53l0x_api.o(i.VL53L0X_StaticInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = VL53L0X_StaticInit &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_load_tuning_settings
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetFractionEnable
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceParameters
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
 </UL>
 
 <P><STRONG><a name="[8b]"></a>VL53L0X_UpdateByte</STRONG> (Thumb, 66 bytes, Stack size 32 bytes, vl53l0x_platform.o(i.VL53L0X_UpdateByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetLimitCheckEnable
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 
 <P><STRONG><a name="[87]"></a>VL53L0X_WrByte</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_WrByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = VL53L0X_WrByte &rArr; VL53L0X_write_byte &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
+<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceAddress
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StartMeasurement
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetSequenceStepEnable
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetGpioConfig
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceAddress
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ClearInterruptMask
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_CheckAndLoadInterruptSettings
 </UL>
 
-<P><STRONG><a name="[b8]"></a>VL53L0X_WrWord</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_WrWord))
+<P><STRONG><a name="[ba]"></a>VL53L0X_WrWord</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_WrWord))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = VL53L0X_WrWord &rArr; VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_word
+<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_word
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_offset_calibration_data_micro_meter
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetXTalkCompensationRateMegaCps
+<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_offset_calibration_data_micro_meter
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetXTalkCompensationRateMegaCps
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetLimitCheckValue
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetLimitCheckEnable
 </UL>
 
-<P><STRONG><a name="[ca]"></a>VL53L0X_WriteMulti</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_WriteMulti))
+<P><STRONG><a name="[cc]"></a>VL53L0X_WriteMulti</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, vl53l0x_platform.o(i.VL53L0X_WriteMulti))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = VL53L0X_WriteMulti &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
+<BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_load_tuning_settings
 </UL>
 
-<P><STRONG><a name="[cc]"></a>VL53L0X_calc_dmax</STRONG> (Thumb, 212 bytes, Stack size 32 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_dmax))
+<P><STRONG><a name="[ce]"></a>VL53L0X_calc_dmax</STRONG> (Thumb, 212 bytes, Stack size 32 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_dmax))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = VL53L0X_calc_dmax
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_isqrt
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_isqrt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
-</UL>
-
-<P><STRONG><a name="[d2]"></a>VL53L0X_calc_macro_period_ps</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_macro_period_ps))
-<BR><BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_us
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
 </UL>
 
-<P><STRONG><a name="[ce]"></a>VL53L0X_calc_sigma_estimate</STRONG> (Thumb, 540 bytes, Stack size 80 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_sigma_estimate))
+<P><STRONG><a name="[d4]"></a>VL53L0X_calc_macro_period_ps</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_macro_period_ps))
+<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_us
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
+</UL>
+
+<P><STRONG><a name="[d0]"></a>VL53L0X_calc_sigma_estimate</STRONG> (Thumb, 540 bytes, Stack size 80 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_sigma_estimate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VL53L0X_calc_sigma_estimate &rArr; VL53L0X_get_total_signal_rate &rArr; VL53L0X_get_total_xtalk_rate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_isqrt
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_dmax
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_signal_rate
+<BR>[Calls]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_isqrt
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_dmax
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_signal_rate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
+<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_pal_range_status
 </UL>
 
-<P><STRONG><a name="[d1]"></a>VL53L0X_calc_timeout_mclks</STRONG> (Thumb, 34 bytes, Stack size 4 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_timeout_mclks))
+<P><STRONG><a name="[d3]"></a>VL53L0X_calc_timeout_mclks</STRONG> (Thumb, 34 bytes, Stack size 4 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_timeout_mclks))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = VL53L0X_calc_timeout_mclks
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_macro_period_ps
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_macro_period_ps
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
 </UL>
 
-<P><STRONG><a name="[d3]"></a>VL53L0X_calc_timeout_us</STRONG> (Thumb, 34 bytes, Stack size 4 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_timeout_us))
+<P><STRONG><a name="[d5]"></a>VL53L0X_calc_timeout_us</STRONG> (Thumb, 34 bytes, Stack size 4 bytes, vl53l0x_api_core.o(i.VL53L0X_calc_timeout_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = VL53L0X_calc_timeout_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_macro_period_ps
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_macro_period_ps
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
 </UL>
 
-<P><STRONG><a name="[d4]"></a>VL53L0X_check_part_used</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, vl53l0x_api_strings.o(i.VL53L0X_check_part_used))
+<P><STRONG><a name="[d6]"></a>VL53L0X_check_part_used</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, vl53l0x_api_strings.o(i.VL53L0X_check_part_used))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = VL53L0X_check_part_used &rArr; VL53L0X_get_info_from_device &rArr; VL53L0X_device_read_strobe &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_device_info
 </UL>
 
-<P><STRONG><a name="[f9]"></a>VL53L0X_decode_timeout</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_decode_timeout))
-<BR><BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<P><STRONG><a name="[fb]"></a>VL53L0X_decode_timeout</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_decode_timeout))
+<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
 </UL>
 
-<P><STRONG><a name="[d9]"></a>VL53L0X_decode_vcsel_period</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_decode_vcsel_period))
-<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
+<P><STRONG><a name="[db]"></a>VL53L0X_decode_vcsel_period</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_decode_vcsel_period))
+<BR><BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_vcsel_pulse_period
 </UL>
 
-<P><STRONG><a name="[d6]"></a>VL53L0X_device_read_strobe</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_device_read_strobe))
+<P><STRONG><a name="[d8]"></a>VL53L0X_device_read_strobe</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_device_read_strobe))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = VL53L0X_device_read_strobe &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_info_from_device
 </UL>
 
-<P><STRONG><a name="[100]"></a>VL53L0X_encode_timeout</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_encode_timeout))
-<BR><BR>[Called By]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<P><STRONG><a name="[103]"></a>VL53L0X_encode_timeout</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_encode_timeout))
+<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
 </UL>
 
-<P><STRONG><a name="[e7]"></a>VL53L0X_encode_vcsel_period</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_encode_vcsel_period))
-<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<P><STRONG><a name="[e9]"></a>VL53L0X_encode_vcsel_period</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_encode_vcsel_period))
+<BR><BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
 </UL>
 
 <P><STRONG><a name="[91]"></a>VL53L0X_get_device_info</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, vl53l0x_api_strings.o(i.VL53L0X_get_device_info))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = VL53L0X_get_device_info &rArr; VL53L0X_check_part_used &rArr; VL53L0X_get_info_from_device &rArr; VL53L0X_device_read_strobe &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
+<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceInfo
 </UL>
 
-<P><STRONG><a name="[c6]"></a>VL53L0X_get_info_from_device</STRONG> (Thumb, 1320 bytes, Stack size 120 bytes, vl53l0x_api_core.o(i.VL53L0X_get_info_from_device))
+<P><STRONG><a name="[c8]"></a>VL53L0X_get_info_from_device</STRONG> (Thumb, 1320 bytes, Stack size 120 bytes, vl53l0x_api_core.o(i.VL53L0X_get_info_from_device))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = VL53L0X_get_info_from_device &rArr; VL53L0X_device_read_strobe &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_device_read_strobe
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdDWord
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PollingDelay
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PollingDelay
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_check_part_used
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
 <P><STRONG><a name="[9e]"></a>VL53L0X_get_measurement_timing_budget_micro_seconds</STRONG> (Thumb, 196 bytes, Stack size 32 bytes, vl53l0x_api_core.o(i.VL53L0X_get_measurement_timing_budget_micro_seconds))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224<LI>Call Chain = VL53L0X_get_measurement_timing_budget_micro_seconds &rArr; get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 </UL>
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetMeasurementTimingBudgetMicroSeconds
 </UL>
@@ -1321,50 +1333,58 @@ Global Symbols
 <P><STRONG><a name="[a1]"></a>VL53L0X_get_pal_error_string</STRONG> (Thumb, 176 bytes, Stack size 8 bytes, vl53l0x_api_strings.o(i.VL53L0X_get_pal_error_string))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = VL53L0X_get_pal_error_string
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetPalErrorString
 </UL>
 
-<P><STRONG><a name="[a4]"></a>VL53L0X_get_pal_range_status</STRONG> (Thumb, 486 bytes, Stack size 96 bytes, vl53l0x_api_core.o(i.VL53L0X_get_pal_range_status))
+<P><STRONG><a name="[a6]"></a>VL53L0X_get_pal_range_status</STRONG> (Thumb, 486 bytes, Stack size 96 bytes, vl53l0x_api_core.o(i.VL53L0X_get_pal_range_status))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
+<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetLimitCheckValue
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetLimitCheckEnable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangingMeasurementData
 </UL>
 
-<P><STRONG><a name="[cf]"></a>VL53L0X_get_total_signal_rate</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, vl53l0x_api_core.o(i.VL53L0X_get_total_signal_rate))
+<P><STRONG><a name="[a3]"></a>VL53L0X_get_range_status_string</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, vl53l0x_api_strings.o(i.VL53L0X_get_range_status_string))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = VL53L0X_get_range_status_string
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangeStatusString
+</UL>
+
+<P><STRONG><a name="[d1]"></a>VL53L0X_get_total_signal_rate</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, vl53l0x_api_core.o(i.VL53L0X_get_total_signal_rate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = VL53L0X_get_total_signal_rate &rArr; VL53L0X_get_total_xtalk_rate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
+<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_xtalk_rate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
 </UL>
 
-<P><STRONG><a name="[d0]"></a>VL53L0X_get_total_xtalk_rate</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_get_total_xtalk_rate))
+<P><STRONG><a name="[d2]"></a>VL53L0X_get_total_xtalk_rate</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_get_total_xtalk_rate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = VL53L0X_get_total_xtalk_rate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetXTalkCompensationEnable
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetXTalkCompensationEnable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_signal_rate
+<BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_total_signal_rate
 </UL>
 
-<P><STRONG><a name="[a8]"></a>VL53L0X_get_vcsel_pulse_period</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, vl53l0x_api_core.o(i.VL53L0X_get_vcsel_pulse_period))
+<P><STRONG><a name="[aa]"></a>VL53L0X_get_vcsel_pulse_period</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, vl53l0x_api_core.o(i.VL53L0X_get_vcsel_pulse_period))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = VL53L0X_get_vcsel_pulse_period &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_vcsel_period
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_vcsel_period
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
 </UL>
 
-<P><STRONG><a name="[da]"></a>VL53L0X_i2c_init</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, vl53l0x_i2c.o(i.VL53L0X_i2c_init))
+<P><STRONG><a name="[dc]"></a>VL53L0X_i2c_init</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, vl53l0x_i2c.o(i.VL53L0X_i2c_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = VL53L0X_i2c_init &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -1372,303 +1392,303 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[cd]"></a>VL53L0X_isqrt</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_isqrt))
-<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_dmax
+<P><STRONG><a name="[cf]"></a>VL53L0X_isqrt</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, vl53l0x_api_core.o(i.VL53L0X_isqrt))
+<BR><BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_sigma_estimate
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_dmax
 </UL>
 
 <P><STRONG><a name="[86]"></a>VL53L0X_load_tuning_settings</STRONG> (Thumb, 164 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_load_tuning_settings))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = VL53L0X_load_tuning_settings &rArr; VL53L0X_WriteMulti &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_CheckAndLoadInterruptSettings
 </UL>
 
-<P><STRONG><a name="[af]"></a>VL53L0X_measurement_poll_for_completion</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_measurement_poll_for_completion))
+<P><STRONG><a name="[b1]"></a>VL53L0X_measurement_poll_for_completion</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, vl53l0x_api_core.o(i.VL53L0X_measurement_poll_for_completion))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = VL53L0X_measurement_poll_for_completion &rArr; VL53L0X_GetMeasurementDataReady &rArr; VL53L0X_GetInterruptMaskStatus &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PollingDelay
+<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PollingDelay
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetMeasurementDataReady
 </UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
+<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleMeasurement
 </UL>
 
-<P><STRONG><a name="[db]"></a>VL53L0X_perform_phase_calibration</STRONG> (Thumb, 116 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_phase_calibration))
+<P><STRONG><a name="[dd]"></a>VL53L0X_perform_phase_calibration</STRONG> (Thumb, 116 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_phase_calibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = VL53L0X_perform_phase_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
 </UL>
 
-<P><STRONG><a name="[aa]"></a>VL53L0X_perform_ref_calibration</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_ref_calibration))
+<P><STRONG><a name="[ac]"></a>VL53L0X_perform_ref_calibration</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_ref_calibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = VL53L0X_perform_ref_calibration &rArr; VL53L0X_perform_vhv_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefCalibration
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefCalibration
 </UL>
 
-<P><STRONG><a name="[ac]"></a>VL53L0X_perform_ref_spad_management</STRONG> (Thumb, 542 bytes, Stack size 136 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_ref_spad_management))
+<P><STRONG><a name="[ae]"></a>VL53L0X_perform_ref_spad_management</STRONG> (Thumb, 542 bytes, Stack size 136 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_ref_spad_management))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_good_spad
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_spad_bit
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;perform_ref_signal_measurement
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_good_spad
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_spad_bit
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefSpadManagement
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefSpadManagement
 </UL>
 
-<P><STRONG><a name="[dc]"></a>VL53L0X_perform_single_ref_calibration</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_single_ref_calibration))
+<P><STRONG><a name="[de]"></a>VL53L0X_perform_single_ref_calibration</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_single_ref_calibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = VL53L0X_perform_single_ref_calibration &rArr; VL53L0X_measurement_poll_for_completion &rArr; VL53L0X_GetMeasurementDataReady &rArr; VL53L0X_GetInterruptMaskStatus &rArr; VL53L0X_RdByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_measurement_poll_for_completion
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ClearInterruptMask
 </UL>
-<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
 </UL>
 
-<P><STRONG><a name="[de]"></a>VL53L0X_perform_vhv_calibration</STRONG> (Thumb, 116 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_vhv_calibration))
+<P><STRONG><a name="[e0]"></a>VL53L0X_perform_vhv_calibration</STRONG> (Thumb, 116 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.VL53L0X_perform_vhv_calibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = VL53L0X_perform_vhv_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_single_ref_calibration
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_calibration
 </UL>
 
-<P><STRONG><a name="[b2]"></a>VL53L0X_read_byte</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, vl53l0x_i2c.o(i.VL53L0X_read_byte))
+<P><STRONG><a name="[b4]"></a>VL53L0X_read_byte</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, vl53l0x_i2c.o(i.VL53L0X_read_byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_UpdateByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
 
-<P><STRONG><a name="[b3]"></a>VL53L0X_read_dword</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_dword))
+<P><STRONG><a name="[b5]"></a>VL53L0X_read_dword</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_dword))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VL53L0X_read_dword &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdDWord
 </UL>
 
-<P><STRONG><a name="[b5]"></a>VL53L0X_read_multi</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_multi))
+<P><STRONG><a name="[b7]"></a>VL53L0X_read_multi</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_multi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_word
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_dword
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_word
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_dword
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_byte
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
 </UL>
 
-<P><STRONG><a name="[b4]"></a>VL53L0X_read_word</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_word))
+<P><STRONG><a name="[b6]"></a>VL53L0X_read_word</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_read_word))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
 </UL>
 
-<P><STRONG><a name="[dd]"></a>VL53L0X_ref_calibration_io</STRONG> (Thumb, 178 bytes, Stack size 56 bytes, vl53l0x_api_calibration.o(i.VL53L0X_ref_calibration_io))
+<P><STRONG><a name="[df]"></a>VL53L0X_ref_calibration_io</STRONG> (Thumb, 178 bytes, Stack size 56 bytes, vl53l0x_api_calibration.o(i.VL53L0X_ref_calibration_io))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_UpdateByte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_ref_calibration
+<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_vhv_calibration
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_ref_calibration
 </UL>
 
-<P><STRONG><a name="[ba]"></a>VL53L0X_set_measurement_timing_budget_micro_seconds</STRONG> (Thumb, 194 bytes, Stack size 40 bytes, vl53l0x_api_core.o(i.VL53L0X_set_measurement_timing_budget_micro_seconds))
+<P><STRONG><a name="[bc]"></a>VL53L0X_set_measurement_timing_budget_micro_seconds</STRONG> (Thumb, 194 bytes, Stack size 40 bytes, vl53l0x_api_core.o(i.VL53L0X_set_measurement_timing_budget_micro_seconds))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_set_measurement_timing_budget_micro_seconds &rArr; get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
+<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
 </UL>
 
-<P><STRONG><a name="[bc]"></a>VL53L0X_set_offset_calibration_data_micro_meter</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_offset_calibration_data_micro_meter))
+<P><STRONG><a name="[be]"></a>VL53L0X_set_offset_calibration_data_micro_meter</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_offset_calibration_data_micro_meter))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = VL53L0X_set_offset_calibration_data_micro_meter &rArr; VL53L0X_WrWord &rArr; VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetOffsetCalibrationDataMicroMeter
+<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetOffsetCalibrationDataMicroMeter
 </UL>
 
-<P><STRONG><a name="[be]"></a>VL53L0X_set_ref_calibration</STRONG> (Thumb, 32 bytes, Stack size 40 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_ref_calibration))
+<P><STRONG><a name="[c0]"></a>VL53L0X_set_ref_calibration</STRONG> (Thumb, 32 bytes, Stack size 40 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_ref_calibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_set_ref_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ref_calibration_io
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetRefCalibration
+<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetRefCalibration
 </UL>
 
-<P><STRONG><a name="[c0]"></a>VL53L0X_set_reference_spads</STRONG> (Thumb, 166 bytes, Stack size 56 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_reference_spads))
+<P><STRONG><a name="[c2]"></a>VL53L0X_set_reference_spads</STRONG> (Thumb, 166 bytes, Stack size 56 bytes, vl53l0x_api_calibration.o(i.VL53L0X_set_reference_spads))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = VL53L0X_set_reference_spads &rArr; enable_ref_spads &rArr; get_ref_spad_map &rArr; VL53L0X_ReadMulti &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetReferenceSpads
+<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetReferenceSpads
 </UL>
 
-<P><STRONG><a name="[c3]"></a>VL53L0X_set_vcsel_pulse_period</STRONG> (Thumb, 544 bytes, Stack size 40 bytes, vl53l0x_api_core.o(i.VL53L0X_set_vcsel_pulse_period))
+<P><STRONG><a name="[c5]"></a>VL53L0X_set_vcsel_pulse_period</STRONG> (Thumb, 544 bytes, Stack size 40 bytes, vl53l0x_api_core.o(i.VL53L0X_set_vcsel_pulse_period))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = VL53L0X_set_vcsel_pulse_period &rArr; VL53L0X_perform_phase_calibration &rArr; VL53L0X_ref_calibration_io &rArr; VL53L0X_UpdateByte &rArr; VL53L0X_read_byte &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_encode_vcsel_period
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
+<BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_encode_vcsel_period
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_phase_calibration
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_sequence_step_timeout
+<LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_sequence_step_timeout
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetVcselPulsePeriod
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetVcselPulsePeriod
 </UL>
 
-<P><STRONG><a name="[c8]"></a>VL53L0X_write_byte</STRONG> (Thumb, 12 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_byte))
+<P><STRONG><a name="[ca]"></a>VL53L0X_write_byte</STRONG> (Thumb, 12 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = VL53L0X_write_byte &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
 </UL>
 <BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_UpdateByte
 </UL>
 
-<P><STRONG><a name="[cb]"></a>VL53L0X_write_multi</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_multi))
+<P><STRONG><a name="[cd]"></a>VL53L0X_write_multi</STRONG> (Thumb, 22 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_multi))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_word
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_word
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_byte
+<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
 </UL>
 
-<P><STRONG><a name="[c9]"></a>VL53L0X_write_word</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_word))
+<P><STRONG><a name="[cb]"></a>VL53L0X_write_word</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL53L0X_write_word))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = VL53L0X_write_word &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 </UL>
 
-<P><STRONG><a name="[e9]"></a>VL_IIC_Ack</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Ack))
+<P><STRONG><a name="[eb]"></a>VL_IIC_Ack</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Ack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = VL_IIC_Ack &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
 </UL>
 
-<P><STRONG><a name="[eb]"></a>VL_IIC_NAck</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_NAck))
+<P><STRONG><a name="[ed]"></a>VL_IIC_NAck</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_NAck))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
+<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
 </UL>
 
-<P><STRONG><a name="[ec]"></a>VL_IIC_Read_Byte</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, vl53l0x_i2c.o(i.VL_IIC_Read_Byte))
+<P><STRONG><a name="[ee]"></a>VL_IIC_Read_Byte</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, vl53l0x_i2c.o(i.VL_IIC_Read_Byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_NAck
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Ack
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_NAck
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Ack
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
 
-<P><STRONG><a name="[e5]"></a>VL_IIC_Read_nByte</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Read_nByte))
+<P><STRONG><a name="[e7]"></a>VL_IIC_Read_nByte</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Read_nByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
+<BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_read_multi
 </UL>
 
-<P><STRONG><a name="[ee]"></a>VL_IIC_Send_Byte</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Send_Byte))
+<P><STRONG><a name="[f0]"></a>VL_IIC_Send_Byte</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Send_Byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = VL_IIC_Send_Byte &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
 
-<P><STRONG><a name="[ed]"></a>VL_IIC_Start</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Start))
+<P><STRONG><a name="[ef]"></a>VL_IIC_Start</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = VL_IIC_Start &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
 
-<P><STRONG><a name="[f0]"></a>VL_IIC_Stop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, vl53l0x_i2c.o(i.VL_IIC_Stop))
+<P><STRONG><a name="[f2]"></a>VL_IIC_Stop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, vl53l0x_i2c.o(i.VL_IIC_Stop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
 
-<P><STRONG><a name="[ef]"></a>VL_IIC_Wait_Ack</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Wait_Ack))
+<P><STRONG><a name="[f1]"></a>VL_IIC_Wait_Ack</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, vl53l0x_i2c.o(i.VL_IIC_Wait_Ack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
+<BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Write_nByte
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_nByte
 </UL>
 
-<P><STRONG><a name="[e8]"></a>VL_IIC_Write_nByte</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Write_nByte))
+<P><STRONG><a name="[ea]"></a>VL_IIC_Write_nByte</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, vl53l0x_i2c.o(i.VL_IIC_Write_nByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
+<BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
+<BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_write_multi
 </UL>
 
-<P><STRONG><a name="[f1]"></a>XShut_PinInit</STRONG> (Thumb, 62 bytes, Stack size 32 bytes, vl53l0x.o(i.XShut_PinInit))
+<P><STRONG><a name="[f3]"></a>XShut_PinInit</STRONG> (Thumb, 62 bytes, Stack size 32 bytes, vl53l0x.o(i.XShut_PinInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = XShut_PinInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -1677,64 +1697,65 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f2]"></a>__0printf$8</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[f4]"></a>__0printf$8</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[111]"></a>__1printf$8</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
+<P><STRONG><a name="[115]"></a>__1printf$8</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8), UNUSED)
 
-<P><STRONG><a name="[fb]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8))
+<P><STRONG><a name="[fd]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf8.o(i.__0printf$8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_test
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
 </UL>
 
-<P><STRONG><a name="[112]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[116]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[113]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[117]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[114]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[118]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[f6]"></a>delay_init</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, delay.o(i.delay_init))
+<P><STRONG><a name="[f8]"></a>delay_init</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, delay.o(i.delay_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_CLKSourceConfig
+<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_CLKSourceConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ea]"></a>delay_us</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, delay.o(i.delay_us))
+<P><STRONG><a name="[ec]"></a>delay_us</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, delay.o(i.delay_us))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = delay_us
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_NAck
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Ack
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Wait_Ack
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Stop
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Start
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Send_Byte
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Read_Byte
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_NAck
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL_IIC_Ack
 </UL>
 
-<P><STRONG><a name="[df]"></a>enable_ref_spads</STRONG> (Thumb, 148 bytes, Stack size 64 bytes, vl53l0x_api_calibration.o(i.enable_ref_spads))
+<P><STRONG><a name="[e1]"></a>enable_ref_spads</STRONG> (Thumb, 148 bytes, Stack size 64 bytes, vl53l0x_api_calibration.o(i.enable_ref_spads))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = enable_ref_spads &rArr; get_ref_spad_map &rArr; VL53L0X_ReadMulti &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_ref_spad_map
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_good_spad
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_spad_bit
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_ref_spad_map
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_aperture
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_ref_spad_map
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_next_good_spad
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_spad_bit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
-<P><STRONG><a name="[e3]"></a>enable_spad_bit</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, vl53l0x_api_calibration.o(i.enable_spad_bit))
+<P><STRONG><a name="[e5]"></a>enable_spad_bit</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, vl53l0x_api_calibration.o(i.enable_spad_bit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = enable_spad_bit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
 <P><STRONG><a name="[5e]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, main.o(i.fputc))
@@ -1744,157 +1765,177 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf8.o(i.__0printf$8)
 </UL>
-<P><STRONG><a name="[e2]"></a>get_next_good_spad</STRONG> (Thumb, 92 bytes, Stack size 28 bytes, vl53l0x_api_calibration.o(i.get_next_good_spad))
+<P><STRONG><a name="[e4]"></a>get_next_good_spad</STRONG> (Thumb, 92 bytes, Stack size 28 bytes, vl53l0x_api_calibration.o(i.get_next_good_spad))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = get_next_good_spad
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
-<P><STRONG><a name="[f8]"></a>get_ref_spad_map</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.get_ref_spad_map))
+<P><STRONG><a name="[fa]"></a>get_ref_spad_map</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.get_ref_spad_map))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = get_ref_spad_map &rArr; VL53L0X_ReadMulti &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_ReadMulti
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
 </UL>
 
-<P><STRONG><a name="[c7]"></a>get_sequence_step_timeout</STRONG> (Thumb, 242 bytes, Stack size 64 bytes, vl53l0x_api_core.o(i.get_sequence_step_timeout))
+<P><STRONG><a name="[c9]"></a>get_sequence_step_timeout</STRONG> (Thumb, 242 bytes, Stack size 64 bytes, vl53l0x_api_core.o(i.get_sequence_step_timeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_timeout
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_us
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_timeout
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_us
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdByte
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_get_measurement_timing_budget_micro_seconds
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
 </UL>
 
-<P><STRONG><a name="[e1]"></a>is_aperture</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.is_aperture))
-<BR><BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<P><STRONG><a name="[e3]"></a>is_aperture</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.is_aperture))
+<BR><BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_reference_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
-<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 270 bytes, Stack size 16 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 680<LI>Call Chain = main &rArr; vl53l0x_set_mode &rArr; VL53L0X_StaticInit &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
+<P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 346 bytes, Stack size 0 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = main &rArr; vl53l0x_set_mode &rArr; VL53L0X_StaticInit &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
-<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_i2c_init
+<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;XShut_PinInit
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_i2c_init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_test
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[e0]"></a>perform_ref_signal_measurement</STRONG> (Thumb, 100 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.perform_ref_signal_measurement))
+<P><STRONG><a name="[e2]"></a>perform_ref_signal_measurement</STRONG> (Thumb, 100 bytes, Stack size 48 bytes, vl53l0x_api_calibration.o(i.perform_ref_signal_measurement))
 <BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
-<P><STRONG><a name="[ff]"></a>print_pal_error</STRONG> (Thumb, 26 bytes, Stack size 40 bytes, vl53l0x.o(i.print_pal_error))
+<P><STRONG><a name="[102]"></a>print_pal_error</STRONG> (Thumb, 26 bytes, Stack size 40 bytes, vl53l0x.o(i.print_pal_error))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = print_pal_error &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetPalErrorString
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_set_mode
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
 </UL>
 
-<P><STRONG><a name="[a6]"></a>sequence_step_enabled</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, vl53l0x_api.o(i.sequence_step_enabled))
+<P><STRONG><a name="[a8]"></a>sequence_step_enabled</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, vl53l0x_api.o(i.sequence_step_enabled))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = sequence_step_enabled
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 </UL>
 
-<P><STRONG><a name="[e4]"></a>set_ref_spad_map</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.set_ref_spad_map))
+<P><STRONG><a name="[e6]"></a>set_ref_spad_map</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, vl53l0x_api_calibration.o(i.set_ref_spad_map))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = set_ref_spad_map &rArr; VL53L0X_WriteMulti &rArr; VL53L0X_write_multi &rArr; VL_IIC_Write_nByte &rArr; VL_IIC_Wait_Ack &rArr; VL_IIC_Stop &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WriteMulti
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enable_ref_spads
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_perform_ref_spad_management
 </UL>
 
-<P><STRONG><a name="[e6]"></a>set_sequence_step_timeout</STRONG> (Thumb, 258 bytes, Stack size 48 bytes, vl53l0x_api_core.o(i.set_sequence_step_timeout))
+<P><STRONG><a name="[e8]"></a>set_sequence_step_timeout</STRONG> (Thumb, 258 bytes, Stack size 48 bytes, vl53l0x_api_core.o(i.set_sequence_step_timeout))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = set_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_encode_timeout
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_timeout
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
+<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_encode_timeout
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_decode_timeout
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_calc_timeout_mclks
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrWord
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetVcselPulsePeriod
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetSequenceStepEnables
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
+<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_vcsel_pulse_period
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_set_measurement_timing_budget_micro_seconds
 </UL>
 
-<P><STRONG><a name="[fd]"></a>vl53l0x_Addr_set</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, vl53l0x.o(i.vl53l0x_Addr_set))
+<P><STRONG><a name="[ff]"></a>vl53l0x_Addr_set</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, vl53l0x.o(i.vl53l0x_Addr_set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = vl53l0x_Addr_set &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_WrByte
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_RdWord
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceAddress
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceAddress
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_init
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fc]"></a>vl53l0x_init</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, vl53l0x.o(i.vl53l0x_init))
+<P><STRONG><a name="[fe]"></a>vl53l0x_init</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, vl53l0x.o(i.vl53l0x_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = vl53l0x_init &rArr; VL53L0X_DataInit &rArr; VL53L0X_GetDeviceParameters &rArr; VL53L0X_GetMeasurementTimingBudgetMicroSeconds &rArr; VL53L0X_get_measurement_timing_budget_micro_seconds &rArr; get_sequence_step_timeout &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
+<BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_Addr_set
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetDeviceInfo
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_DataInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[fe]"></a>vl53l0x_set_mode</STRONG> (Thumb, 304 bytes, Stack size 40 bytes, vl53l0x_gen.o(i.vl53l0x_set_mode))
+<P><STRONG><a name="[100]"></a>vl53l0x_set_mode</STRONG> (Thumb, 304 bytes, Stack size 40 bytes, vl53l0x_gen.o(i.vl53l0x_set_mode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 664<LI>Call Chain = vl53l0x_set_mode &rArr; VL53L0X_StaticInit &rArr; VL53L0X_perform_ref_spad_management &rArr; perform_ref_signal_measurement &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
 </UL>
 <BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetXTalkCompensationRateMegaCps
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetVcselPulsePeriod
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetReferenceSpads
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetRefCalibration
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetOffsetCalibrationDataMicroMeter
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_pal_error
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_StaticInit
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetXTalkCompensationRateMegaCps
+<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetVcselPulsePeriod
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetReferenceSpads
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetRefCalibration
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetOffsetCalibrationDataMicroMeter
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetMeasurementTimingBudgetMicroSeconds
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetLimitCheckValue
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetLimitCheckEnable
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceMode
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefSpadManagement
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefCalibration
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_SetDeviceMode
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefSpadManagement
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformRefCalibration
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[104]"></a>vl53l0x_start_single_test</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, vl53l0x_gen.o(i.vl53l0x_start_single_test))
+<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = vl53l0x_start_single_test &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_PerformSingleRangingMeasurement
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VL53L0X_GetRangeStatusString
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_test
+</UL>
+
+<P><STRONG><a name="[101]"></a>vl53l0x_test</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, main.o(i.vl53l0x_test))
+<BR><BR>[Stack]<UL><LI>Max Depth = 360<LI>Call Chain = vl53l0x_test &rArr; vl53l0x_start_single_test &rArr; VL53L0X_PerformSingleRangingMeasurement &rArr; VL53L0X_GetRangingMeasurementData &rArr; VL53L0X_get_pal_range_status &rArr; VL53L0X_GetLimitCheckValue &rArr; VL53L0X_RdWord &rArr; VL53L0X_read_word &rArr; VL53L0X_read_multi &rArr; VL_IIC_Read_nByte &rArr; VL_IIC_Read_Byte &rArr; VL_IIC_NAck &rArr; delay_us
+</UL>
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vl53l0x_start_single_test
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1933,20 +1974,20 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
 
-<P><STRONG><a name="[f3]"></a>_printf_core</STRONG> (Thumb, 996 bytes, Stack size 104 bytes, printf8.o(i._printf_core), UNUSED)
+<P><STRONG><a name="[f5]"></a>_printf_core</STRONG> (Thumb, 996 bytes, Stack size 104 bytes, printf8.o(i._printf_core), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$8
-</UL>
-
-<P><STRONG><a name="[f5]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printf8.o(i._printf_post_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0printf$8
 </UL>
 
-<P><STRONG><a name="[f4]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printf8.o(i._printf_pre_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[f7]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printf8.o(i._printf_post_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+</UL>
+
+<P><STRONG><a name="[f6]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printf8.o(i._printf_pre_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 <P>
 <H3>
